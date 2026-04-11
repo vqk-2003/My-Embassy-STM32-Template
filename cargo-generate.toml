@@ -11,6 +11,6 @@ type = "string"
 
 [placeholders.arch]
 prompt = "Chip's architecture?"
-choices = ["cortex-M0, M0+, and M1", "Cortex-M3", "Cortex-M4 and M7", "Cortex-M4F and M7F", "Cortex-M23", "Cortex-M33 and M35P", "Cortex-M33F and M35PF"]
+choices = ["cortex-M0, M0+ or M1", "Cortex-M3", "Cortex-M4 or M7", "Cortex-M4F or M7F", "Cortex-M23", "Cortex-M33 or M35P", "Cortex-M33F or M35PF"]
 default = "Cortex-M3"
 type = "string"
