@@ -7,7 +7,9 @@ edition = "2024"
 cortex-m = { version = "0.7.7", features = ["inline-asm", "critical-section-single-core"] }
 cortex-m-rt = "0.7.5"
 defmt = "1.0.1"
-defmt-rtt = "1.1.0"
+# Do not block when probe-rs disconnect
+# https://docs.rs/defmt-rtt/latest/defmt_rtt/#blockingnon-blocking
+defmt-rtt = { version = "1.1.0", features = ["disable-blocking-mode"] }
 embassy-executor = { version = "0.10.0", features = ["platform-cortex-m", "executor-thread", "defmt"] }
 embassy-futures = { version = "0.1.2", features = ["defmt"] }
 embassy-stm32 = { version = "0.6.0", features = ["defmt", "{{ chip | downcase }}", "memory-x", "time-driver-any", "unstable-pac"] }
