@@ -7,6 +7,11 @@ use embassy_stm32::gpio::{Level, Output, Speed};
 use embassy_time::Timer;
 use {defmt_rtt as _, panic_probe as _};
 
+// There is a known problem of failing to
+// flash after the first time when using Embassy
+// The current work around is to connect the NRST line
+// from the STLINK to the target
+// https://users.rust-lang.org/t/probe-rs-fails-to-work-after-first-time-use-successful/103234
 #[embassy_executor::main]
 async fn main(_spawner: Spawner) {
     info!("Hello, World!");
